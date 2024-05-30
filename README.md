@@ -7,6 +7,10 @@
 3. Set up the database and environment variables in a `.env` file present in `src` folder.
 4. Create the database using `database.sql` query file
 
+## Run command
+1. To start the server run `node src/app.js` in terminal
+2. Start the postman and hit the api `endpoints` at `http://localhost:3000`
+
 ## Endpoints
 
 ### Users
