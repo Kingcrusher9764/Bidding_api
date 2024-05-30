@@ -4,7 +4,7 @@
 
 1. Clone the repository.
 2. Run `npm install` to install dependencies.
-3. Set up the database and environment variables in a `.env` file.
+3. Set up the database and environment variables in a `.env` file present in `src` folder.
 4. Create the database using `database.sql` query file
 
 ## Endpoints
