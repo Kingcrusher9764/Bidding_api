@@ -12,7 +12,7 @@
 ### Users
 
 - `POST api/users/register` - Register a new user.
-    - Take username, email, password as a input in reequest body
+    - Take username, email, password as a input in request body
 - `POST api/users/login` - Authenticate a user and return a token.
     - Take email and password as input in request body
 - `GET api/users/profile` - Get the profile of the logged-in user.
