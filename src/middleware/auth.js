@@ -2,6 +2,9 @@ const jwt = require('jsonwebtoken');
 const pool = require("../config/db")
 
 const authenticate = async (req, res, next) => {
+    if (!req.header('Authorization')) {
+        return res.status(403).json({ message: "Token is not present" })
+    }
     const token = req.header('Authorization').replace('Bearer ', '');
     if (!token) {
         return res.status(401).json({ message: 'No token provided' });

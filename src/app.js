@@ -22,6 +22,7 @@ const PORT = process.env.PORT || 4000
 app.use(limiter)
 app.use(cors())
 app.use(bodyParser.json())
+app.set("view engine", "ejs")
 
 app.use("/api/user", userRoutes)
 app.use("/api/items", itemRoutes)
@@ -29,6 +30,8 @@ app.use("/api/notifications", notificationRoutes)
 
 app.use(errorHandler)
 
-app.listen(PORT, () => {
-    console.log(`Server started at PORT:${PORT}`)
-})
+// app.listen(PORT, () => {
+//     console.log(`Server started at PORT:${PORT}`)
+// })
+
+module.exports = { app, PORT }

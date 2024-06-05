@@ -32,6 +32,10 @@ const getItems = async (req, res, next) => {
     try {
         const { page, limit } = req.query
 
+        if (!page || !limit) {
+            return res.status(403).json({ msg: "Provide the page number and limit query paramters" })
+        }
+
         const query = "SELECT * FROM items ORDER BY id LIMIT $1 OFFSET $2;"
         const { rows } = await pool.query(query, [limit, (page - 1) * limit])
 

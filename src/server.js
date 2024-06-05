@@ -1,13 +1,10 @@
 require('dotenv').config();
 const http = require('http');
-const socketIo = require('socket.io');
-const express = require("express")
-
-const app = express()
-const PORT = process.env.PORT2 || 4000
+const socket = require('socket.io');
+const { app, PORT } = require("./app")
 
 const server = http.createServer(app);
-const io = socketIo(server);
+const io = socket(server);
 
 const pool = require("./config/db")
 
@@ -51,7 +48,7 @@ io.on('connection', (socket) => {
             // Create a notification for the item owner
             message = `New Bid of ${bidAmount} for ${item.rows[0].name} has been placed by you`
 
-            io.emit('notify', message);
+            socket.emit('notify', message);
 
         } catch (error) {
             console.error(error);
