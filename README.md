@@ -8,7 +8,7 @@
 4. Create the database using `database.sql` query file
 
 ## Run command
-1. To start the server run `node src/app.js` in terminal
+1. To start the server run `node src/server.js` in terminal
 2. Start the postman and hit the api `endpoints` at `http://localhost:3000`
 
 ## Endpoints
